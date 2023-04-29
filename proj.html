@@ -10,7 +10,7 @@
 
 <body>
     <div>
-        <p>Add Items</p>
+        <p><h1>Add Items</h1></p>
         <hr>
         <form onsubmit="submitHandler(event)">
             <div class="form_group">
@@ -21,15 +21,23 @@
                 <input type="text" class="form_control" id="item" placeholder="Enter your product" required>
 
                 <label for="types">Category:</label>
-                <select name="types" id="types">
-                    <option value="electronics">Electronics</option>
-                    <option value="skincare">SkinCare</option>
-                    <option value="food">Food</option>
+                <select name="types" id="typess">
+                    <option id="elect" >Electronics</option>
+                    <option id="skinc" >SkinCare</option>
+                    <option id="foody" >Food</option>
                 </select>
 
                 <button type="submit" class="sub_btn">add item</button>
             </div>
         </form>
+
+        <h2>Electronics Items</h2>
+        <ul id="ele"></ul>
+        <h2>Skin Care Items</h2>
+        <ul id="skin"></ul>
+        <h2>Food Items</h2>
+        <ul id="food"></ul>
+
         <ul id="items" class="list_group"></ul>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.6/axios.min.js"></script>
