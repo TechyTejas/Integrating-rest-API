@@ -31,32 +31,34 @@ async function displayItemOnScreen() {
     
     //ul tags
     Ele.innerHTML="";
-    Skin.innerHTML="";
+    Skin.innerHTML="";   //?
     Food.innerHTML="";
 
     const response = await axios.get("https://crudcrud.com/api/543751b925074bf1863cf1c521a04cd2/Itemlist")
-    let lists = response.data
-    for (let i = 0; i < lists.length; i++) {
+    let lists = response.data    //?
+    for (let i = 0; i < lists.length; i++) {  //use foreach
         const order = lists[i];
 
         const newItem = document.createElement('li');
+        newItem.id="li";
 
         //create delbtn
         const deletebtn = document.createElement('input')
+     //   deletebtn.id="del";
         deletebtn.type = 'button';
         deletebtn.value = 'Delete';
         deletebtn.onclick = async () => {
-            await axios.delete(`https://crudcrud.com/api/543751b925074bf1863cf1c521a04cd2/Itemlist/${appointment._id}`)
+            await axios.delete(`https://crudcrud.com/api/543751b925074bf1863cf1c521a04cd2/Itemlist/${order._id}`)
 
            
             if(order.category==a.value){
                 Ele.removeChild(newItem)
             }
-            else if(order.typess==b.value){
+            else if(order.category==b.value){
                 Skin.removeChild(newItem)
             }
             else{
-                Food.removeChild(newItem);
+                Food.removeChild(newItem) 
             }
         }
 
